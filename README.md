@@ -50,21 +50,21 @@ StudentResultManagementSystem/
 │	  └── all-student-results.jsp
 │	  └── course-details.jsp
 │	  └── course-error.jsp
-│  	└── delete-student.jsp
+│  	 └── delete-student.jsp
 │	  └── edit-student.jsp
 │	  └── error.jsp
 │	  └── error1.jsp
 │	  └── error2.jsp
 │	  └── index.jsp
 │	  └── insert-result.jsp
-│  	└── logout.jsp
+│  	 └── logout.jsp
 │	  └── logout-confirmation.jsp
 │	  └── logout-confirmation-student.jsp
 │	  └── logout-handler.jsp
 │	  └── rank.jsp
 │	  └── register-students.jsp
 │	  └── student-login.jsp
-└──	└── student-results.jsp
+└──	 └── student-results.jsp
 
 ```
 
