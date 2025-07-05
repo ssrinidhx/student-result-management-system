@@ -1,0 +1,75 @@
+DATABASE TABLE DETAILS:
+
+DATABASE - student_result_db
+
+ADMIN LOGIN:
+mysql> desc users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| username | varchar(50)  | NO   | UNI | NULL    |                |
+| password | varchar(100) | NO   |     | NULL    |                |
+| role     | varchar(20)  | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+
+STUDENT LOGIN:
+mysql> desc students;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | int          | NO   | PRI | NULL    | auto_increment |
+| course_name     | varchar(100) | YES  |     | NULL    |                |
+| branch_name     | varchar(100) | YES  |     | NULL    |                |
+| register_number | varchar(50)  | YES  | UNI | NULL    |                |
+| student_name    | varchar(100) | YES  |     | NULL    |                |
+| gender          | varchar(10)  | YES  |     | NULL    |                |
+| year            | varchar(10)  | YES  |     | NULL    |                |
+| semester        | varchar(20)  | YES  |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+SEMESTER SUBJECTS TABLE:
+(semesterx_subjects where x is replaced by 1-10 based on the semester where the working is done in the java code for inserting the subjects to the corresponding semester table)
+mysql> desc semesterx_subjects;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int          | NO   | PRI | NULL    | auto_increment |
+| year         | int          | YES  |     | NULL    |                |
+| course_code  | varchar(20)  | YES  |     | NULL    |                |
+| subject_name | varchar(100) | YES  |     | NULL    |                |
+| subject_type | varchar(20)  | YES  |     | NULL    |                |
+| credits      | int          | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+
+SEMESTER RESULT TABLE:
+(semesterx_result table where the marks of each subject along with the register number is stored where x is replaced by 1-10 based on the corresponding semester)
+(the below is the sample of semester1_results table where the marks of subjects of the 1st semester is stored along with the student's register number)
+mysql> desc semesterx_result;
++-------------------------------------------+-------------+------+-----+---------+-------+
+| Field                                     | Type        | Null | Key | Default | Extra |
++-------------------------------------------+-------------+------+-----+---------+-------+
+| register_number                           | varchar(25) | NO   | PRI | NULL    |       |
+| Technical_English                         | int         | YES  |     | NULL    |       |
+| Algebra_and_Applications                  | int         | YES  |     | NULL    |       |
+| Statistical_Methods                       | int         | YES  |     | NULL    |       |
+| Problem_Solving_and_Programming_in_Python | int         | YES  |     | NULL    |       |
+| Principles_of_Digital_Electronics         | int         | YES  |     | NULL    |       |
+| Computing_Laboratory_I                    | int         | YES  |     | NULL    |       |
+| Programming_Laboratory_in_Python          | int         | YES  |     | NULL    |       |
+| Digital_Electronics_Laboratory            | int         | YES  |     | NULL    |       |
+| English_for_Employability                 | int         | YES  |     | NULL    |       |
++-------------------------------------------+-------------+------+-----+---------+-------+
+
+GPA RESULT TABLE:
+(this table is used to store the student's result where the gpa is converted to percentage to find the top student of each semester which is used for the staff's reference)
+mysql> desc gpa_results;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | int          | NO   | PRI | NULL    | auto_increment |
+| register_number | varchar(20)  | YES  |     | NULL    |                |
+| student_name    | varchar(100) | YES  |     | NULL    |                |
+| semester        | int          | YES  |     | NULL    |                |
+| percentage      | decimal(5,2) | YES  |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
