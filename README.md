@@ -72,19 +72,19 @@ StudentResultManagementSystem/
 
 ### Database Name: `student_result_db`
 
-### 1. `users` : Stores admin login details.
+1. `users` : Stores admin login details.
 
-### 2. `students` : Stores student registration and academic info.
+2. `students` : Stores student registration and academic info.
 
-### 3. `semesterX_subjects` : Stores the subjects of each semester (X = 1 to 10).
+3. `semesterX_subjects` : Stores the subjects of each semester (X = 1 to 10).
 
 _Note: A separate table exists for each semester such as `semester1_subjects`, `semester2_subjects`, etc._
 
-### 4. `semesterX_result` : Stores the marks obtained by students per semester (X = 1 to 10).
+4. `semesterX_result` : Stores the marks obtained by students per semester (X = 1 to 10).
 
 _Note: Subjects and fields vary per semester. These are just examples for `semester1_result`._
 
-### 5. `gpa_results` : Stores GPA results and converted percentage for student ranking.
+5. `gpa_results` : Stores GPA results and converted percentage for student ranking.
 
 ## Relationships:
 - `register_number` is the **linking key** across `students`, `semesterX_result`, and `gpa_results`.
